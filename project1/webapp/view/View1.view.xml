@@ -1,0 +1,69 @@
+<mvc:View controllerName="project1.controller.View1"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m">
+    <Page id="page" title="{i18n>title}">
+    <content>
+    <VBox id="_IDGenVBox">
+    <Button id="_IDGenButton" text="Click me" press="greetme"/>
+   <Text id="id1"/>
+   <Input id="_IDGenInput" width="200px"/>
+    </VBox>
+    	<Table id="idProductsTable" items="{path:'prod>/'}">
+    <columns>
+        <Column id="_IDGenColumn">
+            <Text id="_IDGenText" text="{i18n>pid}"/>
+        </Column>
+         <Column id="_ID1GenColumn">
+            <Text id="_ID1GenText" text="{i18n>pname}"/>
+        </Column>
+         <Column id="_ID2GenColumn">
+            <Text id="_ID2GenText" text="{i18n>sid}"/>
+        </Column>
+         <Column id="_ID3GenColumn">
+            <Text id="_ID3GenText" text="{i18n>cid}"/>
+        </Column>
+         <Column id="_ID4GenColumn">
+            <Text id="_ID4GenText" text="{i18n>qunit}"/>
+        </Column>
+         <Column id="_ID5GenColumn">
+            <Text id="_ID5GenText" text="{i18n>uprice}"/>
+        </Column>
+         <Column id="_ID6GenColumn">
+            <Text id="_ID6GenText" text="{i18n>ustock}"/>
+        </Column>
+         <Column id="_ID7GenColumn">
+            <Text id="_ID7GenText" text="{i18n>uorder}"/>
+            </Column>
+        
+         <!-- <Column id="_ID8GenColumn">
+            <Text id="_ID8GenText" text="{i18n>pid}"/>
+        </Column>
+         <Column id="_ID9GenColumn">
+            <Text id="_ID9GenText" text="{i18n>pid}"/>
+        </Column> --> 
+    </columns>
+
+    <items>
+        <ColumnListItem id="_IDGenColumnListItem1">
+            <cells>
+                <Text id="_IDGenText1" text="{prod>ProductID}"/>
+                <Text id="_IDGenText2" text="{prod>ProductName}"/>
+                <Text id="_IDGenText3" text="{prod>SupplierID}"/>
+                <Text id="_IDGenText4" text="{prod>CategoryID}"/>
+                <Text id="_IDGenText5" text="{prod>QuantityPerUnit}"/>
+                <!-- <Text id="_IDGenText6" text="{prod>UnitPrice}"/> -->
+
+                <ObjectStatus id="_IDGenObjectStatus"
+							class="sapUiSmallMarginBottom"
+							text="{prod>UnitPrice}"
+							icon="{= ${prod>UnitPrice} > 50? 'sap-icon://error' : 'sap-icon://sys-enter-2'}" 
+							state="{= ${prod>UnitPrice} > 50? 'Error' : 'Success'}" />
+                <Text id="_IDGenText7" text="{prod>UnitsInStock}"/>
+                <Text id="_IDGenText8" text="{prod>UnitsOnOrder}"/>
+            </cells>
+        </ColumnListItem>
+    </items>
+</Table>
+    </content>
+    </Page>
+</mvc:View>
